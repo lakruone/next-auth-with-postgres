@@ -1,7 +1,6 @@
 import { ReactNode } from "react"
 
 const layout = async({children} : { children: ReactNode}) => {
-    const response = await fetch('http://localhost:3001/products');
 
     console.log('layout working');
     

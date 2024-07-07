@@ -6,15 +6,42 @@ type Product = {
 }
 
 
+const products = [
+    {
+        productId: 1,
+        price: 700,
+        title: "delectus aut autem",
+        completed: false
+      },
+      {
+        productId: 2,
+        price: 200,
+        title: "quis ut nam facilis et officia qui",
+        completed: false
+      },
+      {
+        productId: 3,
+        price: 300,
+        title: "delectus aut autem",
+        completed: false
+      },
+      {
+        productId: 4,
+        price: 400,
+        title: "quis ut nam facilis et officia qui",
+        completed: false
+      }
+] 
+
 
 const Products = async() => {
     console.log('products from server component');
     // await new Promise(resolve => setTimeout( resolve, 2000))
-    const response = await fetch('http://localhost:3001/products');
-    const response2 = await fetch('http://localhost:3001/products');
+    // const response = await fetch('http://localhost:3001/products');
+    // const response2 = await fetch('http://localhost:3001/products');
 
 
-    const products = await response.json()
+    // const products = await response.json()
     
     
   return (
