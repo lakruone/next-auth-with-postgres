@@ -1,6 +1,12 @@
 
-import { NextAuthOptions } from "next-auth"
+import { NextAuthOptions, User } from "next-auth"
 import CredentialsProvider from "next-auth/providers/credentials"
+
+interface CustomUser extends User {
+    // id: number;
+    username: string;
+  password: string;
+}
 
 export const options: NextAuthOptions = {
 
@@ -18,13 +24,13 @@ export const options: NextAuthOptions = {
         },
         async authorize(credentials) {
             const user = {
-                id: 55,
-                name: 'lakruwan',
+                // id: 55,
+                username: 'lakruwan',
                 password: "123"
             }
 
-            if (credentials?.username === user.name && credentials.password === user.password) {
-                return user
+            if (credentials?.username === user.username && credentials.password === user.password) {
+                return user as CustomUser
             } else {
                 return null
             }
